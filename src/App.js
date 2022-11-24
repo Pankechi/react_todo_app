@@ -1,23 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+
+import TaskPage from "./pages/TaskPage.jsx";
+import React from "react";
+
+// const tasks = {name:'Task1', deadline: '15 november 2022', description: 'do something'}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TaskPage></TaskPage>
     </div>
   );
 }
