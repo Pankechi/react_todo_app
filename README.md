@@ -1,3 +1,9 @@
+# Описание
+
+Небольшой тренировочный проект на React.\
+Для загрузки прикрепленных файлов использован Google Firebase.\
+Для работы с датами использована библиотека Dayjs.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

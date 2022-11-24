@@ -113,7 +113,7 @@ const TodoItem = (props) => {
           }
        </div>
        :
-        <p>no attachments</p> 
+        <p>No attachments</p> 
         }
 
           <Input 
