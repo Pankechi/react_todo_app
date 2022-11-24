@@ -10,7 +10,7 @@ import classes from './style/TodoItem.module.css'
 const TodoItem = (props) => {
 
   /*Стейт хранит информацию об измененных полях компонента при редактировании*/
-  const [edited_task, setEdited_task] = useState({name: '', description: '', deadline: ''})
+  const [edited_task, setEdited_task] = useState({name: props.task_info.name, description: props.task_info.description, deadline: props.task_info.deadline})
 
   /*Стейт регулируюий отрисовку кокретного таска или инпутов для изменени таска*/
   const [show_edit, setShow_edit] = useState(false)
@@ -61,7 +61,7 @@ const TodoItem = (props) => {
           <Input 
             type='text'
             placeholder={props.task_info.name}
-            onChange={event =>  setEdited_task({...edited_task, name: event.target.value})}
+            onChange={event => setEdited_task({...edited_task, name: event.target.value})}
             >New name
           </Input>
 
