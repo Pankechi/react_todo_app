@@ -3,7 +3,7 @@ import Input from './UI/Input';
 import Button from './UI/Button';
 import storage  from '../API/firebase.js'
 import { ref, getDownloadURL } from "firebase/storage";
-import { async } from '@firebase/util';
+import classes from './style/TodoItem.module.css'
 
   /*todo: сделать рефактор вывода прикрепленных файлов в отдельный компонент*/
 
@@ -57,7 +57,7 @@ const TodoItem = (props) => {
 
         {
         show_edit ? 
-        <form action="post">
+        <form className={classes.form__wrapper} action="post">
           <Input 
             type='text'
             placeholder={props.task_info.name}
@@ -80,6 +80,7 @@ const TodoItem = (props) => {
           </Input>
 
           <Button
+            className={`${classes.button} ${classes.button_edit}`}   
             onClick={push_edit}
             >Save changes
           </Button>
@@ -88,7 +89,7 @@ const TodoItem = (props) => {
         
         :
 
-        <div>
+        <div className={classes.todo__item}>
         <h1>Task name: {props.task_info.name}</h1>
 
         <p> Task status: {props.task_info.status}</p>
@@ -100,7 +101,7 @@ const TodoItem = (props) => {
 
        { props.task_info.attachments.length ? 
 
-       <div>
+       <div className={classes.attachments__wrapper}>
         Attachments: 
           {props.task_info.attachments.map((element) => {
             return <a 
@@ -115,23 +116,25 @@ const TodoItem = (props) => {
         <p>no attachments</p> 
         }
 
-         
+          <Input 
+            type="checkbox" 
+            onChange={changeStatus} 
+            >Mark as done 
+          </Input>
       
-        
-        <input 
-          type="checkbox" 
-          onChange={changeStatus} 
-        />
+        <div className={classes.actions__wrapper}>
+          <Button
+            className={`${classes.button} ${classes.button_edit}`} 
+            onClick={editTask}
+            >Edit task
+          </Button>
 
-        <Button 
-          onClick={editTask}
-          >Edit task
-        </Button>
-
-        <Button 
-          onClick={() => {props.deleteTask(props.task_info)}}
-          >Delete
-        </Button>
+          <Button 
+            className={`${classes.button} ${classes.button_delete}`} 
+            onClick={() => {props.deleteTask(props.task_info)}}
+            >Delete
+          </Button>
+        </div>
 
         </div>
         }

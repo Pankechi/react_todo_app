@@ -3,6 +3,7 @@ import TodoItem from '../components/TodoItem';
 import TaskInput from '../components/TaskInput';
 import { useState } from 'react';
 import dayjs from 'dayjs';
+import classes from './TaskPage.module.css'
 
 
 const TaskPage = () => {
@@ -73,20 +74,22 @@ const TaskPage = () => {
 
 
   return (
-    <div>
+    <div className={classes.page__wrapper}>
       <TaskInput addNewTask={addNewTask}></TaskInput>
-      
-      {
-        tasks.map((task) => {
-        return <TodoItem 
-          key={task.id} 
-          task_info={task} 
-          task_done={task_done}
-          edit_task={editTask} 
-          deleteTask={deleteTask}>
-        </TodoItem>
-      })
-      }
+
+      <div className={classes.tasks__wrapper}>
+        {
+          tasks.map((task) => {
+          return <TodoItem 
+            key={task.id} 
+            task_info={task} 
+            task_done={task_done}
+            edit_task={editTask} 
+            deleteTask={deleteTask}>
+          </TodoItem>
+        })
+        }
+      </div>
       
     </div>
   );

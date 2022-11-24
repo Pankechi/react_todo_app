@@ -1,0 +1,25 @@
+.page__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-bottom: 10px;
+  height: 100%;
+}
+
+.new_task_form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 350px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.tasks__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 150px 0 150px;
+  grid-row-gap: 50px;
+  grid-column-gap: 100px;
+}

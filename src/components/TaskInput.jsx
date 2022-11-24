@@ -3,6 +3,7 @@ import Input from './UI/Input';
 import Button from './UI/Button';
 import storage from '../API/firebase.js';
 import { ref, uploadBytes } from "firebase/storage";
+import classes from './style/taskInput.module.css'
 
 
 const TaskInput = (props) => {
@@ -36,7 +37,7 @@ const TaskInput = (props) => {
   }
   
   return (
-    <form action="post">
+    <form className={classes.new_task_form} action="post">
 
       <Input 
         onChange={event => {setNew_task({...new_task, name: event.target.value})}} 
@@ -57,16 +58,28 @@ const TaskInput = (props) => {
       </Input>
 
       <Input 
+        id='file_input'
+        className={classes.file_input}
         onChange={getImg}
         multiple  
-        type='file'
-        >Add file
+        type='file'>
       </Input>
 
-      <Button
-        onClick={push_task}
-        >Add Task
-      </Button>
+      <div className={classes.form__actions}>
+
+        <label 
+          className={classes.file_input_label} 
+          for="file_input"
+          >
+        </label>
+
+        <Button
+          className={classes.new_task_button}
+          onClick={push_task}
+          >Add Task
+        </Button>
+
+      </div>
 
     </form>
   );

@@ -1,0 +1,37 @@
+.new_task_form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: white;
+  width: 400px;
+  align-self: center;
+  border-radius: 15px;
+  margin-top: 10px;
+  padding: 15px;
+} 
+
+.form__actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.file_input {
+  display: none;
+}
+
+.file_input_label {
+  background: url(/static/media/attach_file.ffc5cbaa.svg) no-repeat center;
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+}
+
+.new_task_button {
+  width: 120px;
+  border-radius: 15px;
+  border: none;
+  height: 30px;
+  color: whitesmoke;
+  background-color: cadetblue;
+}

@@ -1,0 +1,49 @@
+.todo__item {
+  border: 2px solid #D0D7DE;
+  display: flex;
+  gap: 18px;
+  flex-direction: column;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.button {
+  width: 120px;
+  border-radius: 15px;
+  border: none;
+  height: 30px;
+  color: whitesmoke;
+}
+
+.button_edit {
+  background-color: green;
+}
+
+.button_delete {
+  background-color: brown;
+}
+
+.attachments__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.actions__wrapper {
+  display: flex;
+  flex-direction: row;
+  grid-gap: 5px;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.form__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 15px;
+}
